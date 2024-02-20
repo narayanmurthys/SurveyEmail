@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ⚡4email>
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+    <style amp4email-boilerplate>body{visibility:hidden}</style>
+    <style amp-custom>
+        .feedback-form {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #f2f4f6;
+        }
+        .feedback-form h2 {
+            color: #333;
+        }
+        .feedback-form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .feedback-form input[type="checkbox"], .feedback-form input[type="text"], .feedback-form select, .feedback-form textarea {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+        .feedback-comment {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="feedback-form">
+        <h2>Feedback Survey</h2>
+        <!-- Note: Change the action-xhr URL to your Flask app's local address -->
+        <form method="post" action-xhr="https://www.pythonanywhere.com/user/Nmurthy/shares/bd2a4a1c5a3e424da93154ccd6abe930/" target="_top" novalidate>
+        <!--<form method="post" action-xhr="http://localhost:5000/submit-feedback" target="_top" novalidate>-->
+            <fieldset>
+                <legend>Your Feedback</legend>
+                <label>Product Interest</label>
+                <label><input type="checkbox" name="product" value="Adobe Analytics"> Adobe Analytics</label>
+                <label><input type="checkbox" name="product" value="Adobe Experience Platform"> Adobe Experience Platform</label>
+                <label><input type="checkbox" name="product" value="Adobe Journey Optimizer"> Adobe Journey Optimizer</label>
+                <!-- Add more options as needed -->
+                <label for="feedbackComment">Your Feedback</label>
+                <textarea id="feedbackComment" name="feedbackComment" required></textarea>
+            </fieldset>
+            <button type="submit">Submit Feedback</button>
+        </form>
+        <div submit-success>
+            <template type="amp-mustache">
+                Thank you for your feedback! <br>
+                <a href="https://yourwebsite.com" target="_blank">Click here to continue</a>
+            </template>
+        </div>
+        <div submit-error>
+            <template type="amp-mustache">
+                Oops! Something went wrong. Please try again later.
+            </template>
+        </div>
+    </div>
+</body>
+</html>
